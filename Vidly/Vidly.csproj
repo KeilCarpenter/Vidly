@@ -44,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.2\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -114,9 +117,6 @@
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
@@ -203,6 +203,14 @@
     <Compile Include="Migrations\201701161107223_AddMembershipType.cs" />
     <Compile Include="Migrations\201701161107223_AddMembershipType.Designer.cs">
       <DependentUpon>201701161107223_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161125247_AddAnnotationToCustomerName.cs" />
+    <Compile Include="Migrations\201701161125247_AddAnnotationToCustomerName.Designer.cs">
+      <DependentUpon>201701161125247_AddAnnotationToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701161141426_PopulateMembershipTypeTable.cs" />
+    <Compile Include="Migrations\201701161141426_PopulateMembershipTypeTable.Designer.cs">
+      <DependentUpon>201701161141426_PopulateMembershipTypeTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -307,6 +315,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701161107223_AddMembershipType.resx">
       <DependentUpon>201701161107223_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161125247_AddAnnotationToCustomerName.resx">
+      <DependentUpon>201701161125247_AddAnnotationToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701161141426_PopulateMembershipTypeTable.resx">
+      <DependentUpon>201701161141426_PopulateMembershipTypeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
