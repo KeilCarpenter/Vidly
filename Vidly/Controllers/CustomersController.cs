@@ -53,7 +53,9 @@ namespace Vidly.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Create()
+        // Access via POST only
+        [HttpPost]
+        public ActionResult Create(Customer customer)
         {
             return View();
         }
