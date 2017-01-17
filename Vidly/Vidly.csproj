@@ -236,6 +236,14 @@
     <Compile Include="Migrations\201701161250087_PopulateGenreTable.Designer.cs">
       <DependentUpon>201701161250087_PopulateGenreTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701170900302_ChangeMovieReleaseDateToNonNullable.cs" />
+    <Compile Include="Migrations\201701170900302_ChangeMovieReleaseDateToNonNullable.Designer.cs">
+      <DependentUpon>201701170900302_ChangeMovieReleaseDateToNonNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201701170907250_DeleteSomeMovies.cs" />
+    <Compile Include="Migrations\201701170907250_DeleteSomeMovies.Designer.cs">
+      <DependentUpon>201701170907250_DeleteSomeMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -369,6 +377,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701161250087_PopulateGenreTable.resx">
       <DependentUpon>201701161250087_PopulateGenreTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170900302_ChangeMovieReleaseDateToNonNullable.resx">
+      <DependentUpon>201701170900302_ChangeMovieReleaseDateToNonNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701170907250_DeleteSomeMovies.resx">
+      <DependentUpon>201701170907250_DeleteSomeMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

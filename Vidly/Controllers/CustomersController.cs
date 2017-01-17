@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
+using System.IO.MemoryMappedFiles;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
@@ -50,14 +51,25 @@ namespace Vidly.Controllers
                 MembershipTypes = membershipTypes
             };
             
-            return View(viewModel);
+            return View("CustomerForm", viewModel);
         }
 
         // Access via POST only
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
-            _context.Customers.Add(customer);
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+
+                customerInDb.Name = customer.Name;
+                customerInDb.Birthdate = customer.Birthdate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            }
+            
             _context.SaveChanges();
             return RedirectToAction("Index", "Customers");
         }
