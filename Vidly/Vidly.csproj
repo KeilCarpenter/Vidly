@@ -240,9 +240,9 @@
     <Compile Include="Migrations\201701170900302_ChangeMovieReleaseDateToNonNullable.Designer.cs">
       <DependentUpon>201701170900302_ChangeMovieReleaseDateToNonNullable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702030053504_CustomerDateOfBirthRequired.cs" />
-    <Compile Include="Migrations\201702030053504_CustomerDateOfBirthRequired.Designer.cs">
-      <DependentUpon>201702030053504_CustomerDateOfBirthRequired.cs</DependentUpon>
+    <Compile Include="Migrations\201702030616572_SetCustomerDateOfBirthAsNullable.cs" />
+    <Compile Include="Migrations\201702030616572_SetCustomerDateOfBirthAsNullable.Designer.cs">
+      <DependentUpon>201702030616572_SetCustomerDateOfBirthAsNullable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -250,6 +250,7 @@
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipAgeRestriction.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -381,8 +382,8 @@
     <EmbeddedResource Include="Migrations\201701170900302_ChangeMovieReleaseDateToNonNullable.resx">
       <DependentUpon>201701170900302_ChangeMovieReleaseDateToNonNullable.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702030053504_CustomerDateOfBirthRequired.resx">
-      <DependentUpon>201702030053504_CustomerDateOfBirthRequired.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201702030616572_SetCustomerDateOfBirthAsNullable.resx">
+      <DependentUpon>201702030616572_SetCustomerDateOfBirthAsNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
