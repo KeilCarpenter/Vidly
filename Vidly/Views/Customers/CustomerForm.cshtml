@@ -6,7 +6,6 @@
 
 <h2>@Model.Title</h2>
 
-@Html.ValidationSummary(true, "Please fix the following errors.")
 @using (@Html.BeginForm("Save", "Customers")){ 
     <div class="form-group">
         @Html.LabelFor(m => m.Customer.Name)

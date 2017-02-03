@@ -62,6 +62,7 @@ namespace Vidly.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
+            // If the submitted for is not valid return state
            if (!ModelState.IsValid)
             {
                 // Populate form with existing customer data

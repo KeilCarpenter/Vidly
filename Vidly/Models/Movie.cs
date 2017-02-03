@@ -18,6 +18,7 @@ namespace Vidly.Models
         public Genre Genre { get; set; }
 
         [Required]
+        [Display(Name = "Genre")]
         public byte GenreId { get; set; }
 
         
@@ -29,6 +30,10 @@ namespace Vidly.Models
 
         [Required]
         [Display(Name = "Number In Stock")]
+        [MovieStockValidation]
         public byte NumberInStock { get; set; }
+
+        public static readonly byte NoStock = 0;
+        public static readonly byte MaxStock = 20;
     }
 }

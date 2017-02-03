@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.Entity;
 using System.Data.SqlClient;
+using System.Runtime.Remoting.Messaging;
 using System.Web.Mvc;
 using Vidly.ViewModels;
 using Vidly.Models;
@@ -48,9 +49,8 @@ namespace Vidly.Controllers
             if (movie == null)
                 return HttpNotFound();
 
-            var viewModel = new MovieFormViewModel
-            {
-                Movie = movie,
+            var viewModel = new MovieFormViewModel(movie)
+            {               
                 Genres = _context.Genres.ToList()
             };
             return View("MovieForm", viewModel);
@@ -59,8 +59,18 @@ namespace Vidly.Controllers
 
         // Access via POST only
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
+            var viewModel = new MovieFormViewModel(movie)
+            {
+                Genres = _context.Genres.ToList()
+            };
+
+            if (!ModelState.IsValid)
+            {
+                return View("MovieForm", viewModel);
+            }
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
