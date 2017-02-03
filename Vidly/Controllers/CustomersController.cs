@@ -45,7 +45,9 @@ namespace Vidly.Controllers
 
         public ActionResult New()
         {
+            // Get membershiptypes so we can iterate over them and insert into DD menu
             var membershipTypes = _context.MembershipTypes.ToList();
+
             var viewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipTypes
@@ -69,12 +71,14 @@ namespace Vidly.Controllers
                 return View("CustomerForm", viewModel);
             }
 
+           // If its a new Customer
             if (customer.Id == 0)
                 _context.Customers.Add(customer);
             else
             {
                 var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
 
+                // Edit Customer with form data
                 customerInDb.Name = customer.Name;
                 customerInDb.Birthdate = customer.Birthdate;
                 customerInDb.MembershipTypeId = customer.MembershipTypeId;
@@ -87,15 +91,20 @@ namespace Vidly.Controllers
 
         public ActionResult Edit(int id)
         {
+            // Get customer by ID
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            // If a customer does not exist return 404 error
             if(customer == null)
                 return HttpNotFound();
 
+            // Init customer and his/her membership type & send to view
             var viewModel = new CustomerFormViewModel
             {
                 Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
+
             return View("CustomerForm", viewModel);
 
         }
