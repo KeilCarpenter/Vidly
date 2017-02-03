@@ -14,8 +14,10 @@ namespace Vidly.Models
             // Get access to customer class
             var customer = (Customer) validationContext.ObjectInstance;
 
-            // Check if customer has a 'Pay As You Go' membership type
-            if (customer.MembershipTypeId == 0 || customer.MembershipTypeId == 1)           
+            /* Check if customer has a 'Pay As You Go' membership type
+               No magic number used or maintainability (set in model)*/
+            if (customer.MembershipTypeId == MembershipType.Unknown  || 
+                customer.MembershipTypeId == MembershipType.PayAsYouGo)           
                 return ValidationResult.Success;
             
             // If there is no DOB

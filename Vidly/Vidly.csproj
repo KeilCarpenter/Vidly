@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201702030616572_SetCustomerDateOfBirthAsNullable.Designer.cs">
       <DependentUpon>201702030616572_SetCustomerDateOfBirthAsNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702031931577_SetMembershipTypeNameToRequired.cs" />
+    <Compile Include="Migrations\201702031931577_SetMembershipTypeNameToRequired.Designer.cs">
+      <DependentUpon>201702031931577_SetMembershipTypeNameToRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -384,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702030616572_SetCustomerDateOfBirthAsNullable.resx">
       <DependentUpon>201702030616572_SetCustomerDateOfBirthAsNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702031931577_SetMembershipTypeNameToRequired.resx">
+      <DependentUpon>201702031931577_SetMembershipTypeNameToRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
